@@ -3,6 +3,9 @@ SliderSwitch
 
 A custom windowed slider designed by [Chris Norstrom](http://www.chrisnorstrom.com/2012/11/invention-multiple-choice-windowed-slider-ui/) which can be use to replace UISwitch.
 
+
+![alt text](https://raw.github.com/torryharris/SliderSwitch/master/images/switchH.png "Logo Title Text 1")
+
 ##How to use:
 1. Download  Slider Switch Demo
 2. Copy SliderSwitch.h and SliderSwitch.m 
