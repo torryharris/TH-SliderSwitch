@@ -1,7 +1,7 @@
 SliderSwitch
 ============
 
-A custom windowed slider designed by Chris Norstrom which can be use to replace UISwitch.
+A custom windowed slider designed by [Chris Norstrom](http://www.chrisnorstrom.com/2012/11/invention-multiple-choice-windowed-slider-ui/) which can be use to replace UISwitch.
 
 ##How to use:
 1. Download  Slider Switch Demo
