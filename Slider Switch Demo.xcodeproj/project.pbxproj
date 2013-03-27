@@ -21,8 +21,6 @@
 		C324677E16AD0E2000B5A5E3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324677D16AD0E2000B5A5E3 /* SenTestingKit.framework */; };
 		C324677F16AD0E2000B5A5E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324675916AD0E1F00B5A5E3 /* UIKit.framework */; };
 		C324678016AD0E2000B5A5E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324675B16AD0E1F00B5A5E3 /* Foundation.framework */; };
-		C324678816AD0E2000B5A5E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C324678616AD0E2000B5A5E3 /* InfoPlist.strings */; };
-		C324678B16AD0E2000B5A5E3 /* Custom_SwitchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C324678A16AD0E2000B5A5E3 /* Custom_SwitchTests.m */; };
 		C38C87B116E4C071003A90F7 /* SliderSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C87B016E4C070003A90F7 /* SliderSwitch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C3FD9DC816AD40C700F5877B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FD9DC716AD40C700F5877B /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -56,10 +54,6 @@
 		C324677516AD0E2000B5A5E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SwitchViewController.xib; sourceTree = "<group>"; };
 		C324677C16AD0E2000B5A5E3 /* Slider Switch DemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slider Switch DemoTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C324677D16AD0E2000B5A5E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C324678516AD0E2000B5A5E3 /* Slider Switch DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Slider Switch DemoTests-Info.plist"; sourceTree = "<group>"; };
-		C324678716AD0E2000B5A5E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C324678916AD0E2000B5A5E3 /* Custom_SwitchTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Custom_SwitchTests.h; sourceTree = "<group>"; };
-		C324678A16AD0E2000B5A5E3 /* Custom_SwitchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Custom_SwitchTests.m; sourceTree = "<group>"; };
 		C38C87AF16E4C070003A90F7 /* SliderSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderSwitch.h; sourceTree = "<group>"; };
 		C38C87B016E4C070003A90F7 /* SliderSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderSwitch.m; sourceTree = "<group>"; };
 		C3FD9DC716AD40C700F5877B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -95,7 +89,6 @@
 			children = (
 				C3FD9DC716AD40C700F5877B /* QuartzCore.framework */,
 				C324675F16AD0E1F00B5A5E3 /* Slider Switch */,
-				C324678316AD0E2000B5A5E3 /* Custom SwitchTests */,
 				C324675816AD0E1F00B5A5E3 /* Frameworks */,
 				C324675616AD0E1F00B5A5E3 /* Products */,
 			);
@@ -147,25 +140,6 @@
 				C324676B16AD0E2000B5A5E3 /* Default.png */,
 				C324676D16AD0E2000B5A5E3 /* Default@2x.png */,
 				C324676F16AD0E2000B5A5E3 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C324678316AD0E2000B5A5E3 /* Custom SwitchTests */ = {
-			isa = PBXGroup;
-			children = (
-				C324678916AD0E2000B5A5E3 /* Custom_SwitchTests.h */,
-				C324678A16AD0E2000B5A5E3 /* Custom_SwitchTests.m */,
-				C324678416AD0E2000B5A5E3 /* Supporting Files */,
-			);
-			path = "Custom SwitchTests";
-			sourceTree = "<group>";
-		};
-		C324678416AD0E2000B5A5E3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C324678516AD0E2000B5A5E3 /* Slider Switch DemoTests-Info.plist */,
-				C324678616AD0E2000B5A5E3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -254,7 +228,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C324678816AD0E2000B5A5E3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C324678B16AD0E2000B5A5E3 /* Custom_SwitchTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,14 +293,6 @@
 				C324677516AD0E2000B5A5E3 /* en */,
 			);
 			name = SwitchViewController.xib;
-			sourceTree = "<group>";
-		};
-		C324678616AD0E2000B5A5E3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C324678716AD0E2000B5A5E3 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
