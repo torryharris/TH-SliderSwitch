@@ -53,6 +53,9 @@
     slideSwitchV=[[SliderSwitch alloc]init];
     slideSwitchV.delegate=self;     
     [slideSwitchV setFrameVertical:(CGRectMake(40, 200, 210, 120)) numberOfFields:3 withCornerRadius:5.0];
+    [slideSwitchV setFrameBackgroundColor:[UIColor grayColor]];
+    [slideSwitchV setSwitchFrameColor:[UIColor lightTextColor]];
+    [slideSwitchV setSwitchBorderWidth:8.0];
     //120/3=40
     //Height of each option is 40 (It should not be a fractional value)
     

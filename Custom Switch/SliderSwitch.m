@@ -219,8 +219,8 @@
            forControlEvents:UIControlEventTouchDragInside];    
     [toggleButton addTarget:self action:@selector(finishedDraggingVertical:withEvent:)
            forControlEvents:UIControlEventTouchUpInside];    
-	toggleButton.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height);    
-    toggleButton.backgroundColor=[UIColor colorWithRed:0.1 green:0.1 blue:0.0 alpha:0.1];
+	toggleButton.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height);
+    toggleButton.backgroundColor=[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
     [toggleButton.layer setBorderWidth:4.0];
     [toggleButton.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     toggleButton.layer.cornerRadius=cornerRadius;
@@ -441,8 +441,8 @@
 - (void)setSwitchFrameColor:(UIColor *)color
 {
     [toggleButton.layer setBorderColor:[color CGColor]];
-    toggleButton.alpha=0.1;
-    toggleButton.backgroundColor=color;
+    //toggleButton.alpha=0.1;
+    //toggleButton.backgroundColor=color;
    
 }
 
