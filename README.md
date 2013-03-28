@@ -7,46 +7,47 @@ A custom windowed slider designed by [Chris Norstrom](http://www.chrisnorstrom.c
 ![alt text](https://raw.github.com/torryharris/SliderSwitch/master/images/switchH.png "Logo Title Text 1")
 
 ##How to use:
-1. Download  Slider Switch Demo
-2. Copy SliderSwitch.h and SliderSwitch.m 
-3. Add the framework QuartzCore.framework in order to be linked into your build.
-4. Implement SliderSwitchDelegate  and declare a property in your viewcontroller.h
+1. Deployment target should be 5.0 or later
+2. Download  Slider Switch Demo
+3. Copy SliderSwitch.h and SliderSwitch.m (It incorporates ARC)
+4. Add the framework QuartzCore.framework in order to be linked into your build.
+5. Implement SliderSwitchDelegate  and declare a property in your viewcontroller.h
 
         @interface SwitchViewController : UIViewController  <SliderSwitchDelegate>
         @property(nonatomic,retain) SliderSwitch *slideSwitchH,*slideSwitchV;
-5. Initialize slideSwitchH and slideSwitchV.
+6. Initialize slideSwitchH and slideSwitchV.
 
          slideSwitchH=[[ SliderSwitch alloc]init];
          slideSwitchV=[[ SliderSwitch alloc]init];
-6.  Call setFrameHorizontal to create a horizontal slider
+7.  Call setFrameHorizontal to create a horizontal slider
 
         [slideSwitchH setFrameHorizontal:(CGRectMake(40, 100, 240, 40)) numberOfFields:3 withCornerRadius:4.0];
-7.  Call setFrameVertical to create a vertical slider
+8.  Call setFrameVertical to create a vertical slider
 
         [slideSwitchV setFrameVertical:(CGRectMake(40, 200, 210, 120)) numberOfFields:3 withCornerRadius:5.0];
 
-8. set slideSwitchH.delegate  and slideSwitchV.delegate to your current view Controller (which implements SliderSwitchDelegate).
+9. set slideSwitchH.delegate  and slideSwitchV.delegate to your current view Controller (which implements SliderSwitchDelegate).
 
         slideSwitchH.delegate=self;
         slideSwitchV.delegate=self;
 
-8. Call setText by passing a string for the label at particular index.
+10. Call setText by passing a string for the label at particular index.
 
         [slideSwitchH setText:@"red" forTextIndex:1];
-10. Call setFrameBackgroundColor to set the background color of frame.
+11. Call setFrameBackgroundColor to set the background color of frame.
  
         [slideSwitchH setFrameBackgroundColor:[UIColor grayColor]];
 For transparent Slider Switch
    
         [slideSwitchH setFrameBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.2 alpha:0.3]];
-11. Call setSwitchFrameColor to set the frame color of switch.
+12. Call setSwitchFrameColor to set the frame color of switch.
 
         [slideSwitchH setSwitchFrameColor:[UIColor whiteColor]];
-12. Call setSwitchBorderWidth to set the border width of Switch.
+13. Call setSwitchBorderWidth to set the border width of Switch.
 
         [slideSwitchH setSwitchBorderWidth:6.0];
 
-13. Implement delegate method switchChangedAtIndex to know the selected option and take appropriate action in your View Controller.This method receives the current slider switch view and index.
+14. Implement delegate method switchChangedAtIndex to know the selected option and take appropriate action in your View Controller.This method receives the current slider switch view and index.
 
          -(void)slideView:(SliderSwitch *)slideswitch switchChangedAtIndex:(NSUInteger)index
          {
