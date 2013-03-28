@@ -93,6 +93,6 @@ while passing frame's width for  setFrameHorizontal   and numberOfFields make su
 
 #####Steps 9,10,11,12 are optional.
 ##License
-SliderSwitch is licensed under the terms of the MIT License. Please see the [LICENSE](https://raw.github.com/torryharris/SliderSwitch/master/License) file for full details.
+SliderSwitch is licensed under the terms of the MIT License. Please see the [License](https://github.com/torryharris/SliderSwitch/blob/master/License) file for full details.
 
 
