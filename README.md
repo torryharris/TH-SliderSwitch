@@ -92,5 +92,7 @@ The purpose of setFrameHorizontal and setFrameVertical method is to set a frame 
 while passing frame's width for  setFrameHorizontal   and numberOfFields make sure that division of frame's width by numberOfFields should not be a fractional value. similarly, while passing frame's height for  setFrameVertical   and numberOfFields make sure that division of frame's  height by numberOfFields should not be a fractional value.
 
 #####Steps 9,10,11,12 are optional.
+##License
+SliderSwitch is licensed under the terms of the MIT License. Please see the [LICENSE](https://raw.github.com/torryharris/SliderSwitch/master/License) file for full details.
 
 
