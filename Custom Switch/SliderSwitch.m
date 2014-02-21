@@ -16,9 +16,9 @@
     if (self) {
         // Initialization code
         _selectedIndex = 0;
-        _selectedFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+        _selectedFont = [UIFont boldSystemFontOfSize:18];
         _selectedColor = [UIColor whiteColor];
-        _unSelectedFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+        _unSelectedFont = [UIFont systemFontOfSize:14];
         _unSelectedColor = [UIColor blackColor];
     }
     return self;
@@ -29,9 +29,9 @@
     if (self) {
         // Initialization code
         _selectedIndex = 0;
-        _selectedFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+        _selectedFont = [UIFont boldSystemFontOfSize:18];
         _selectedColor = [UIColor whiteColor];
-        _unSelectedFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+        _unSelectedFont = [UIFont systemFontOfSize:14];
         _unSelectedColor = [UIColor blackColor];
     }
     return self;
@@ -42,9 +42,9 @@
     if (self) {
         // Initialization code
         _selectedIndex = 0;
-        _selectedFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+        _selectedFont = [UIFont boldSystemFontOfSize:18];
         _selectedColor = [UIColor whiteColor];
-        _unSelectedFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+        _unSelectedFont = [UIFont systemFontOfSize:14];
         _unSelectedColor = [UIColor blackColor];
     }
     return self;
@@ -569,6 +569,7 @@
                      }
      ];
     _selectedIndex = 0;
+    [self changeSelectedLayer];
     [_delegate switchChangedSliderSwitch:self];
 }
 
@@ -584,6 +585,7 @@
                      }
      ];
     _selectedIndex = 1;
+    [self changeSelectedLayer];
     [_delegate switchChangedSliderSwitch:self];
 }
 
@@ -599,6 +601,7 @@
                      }
      ];
     _selectedIndex = 2;
+    [self changeSelectedLayer];
     [_delegate switchChangedSliderSwitch:self];
  
 }
@@ -615,6 +618,7 @@
                      }
      ];
     _selectedIndex = 3;
+    [self changeSelectedLayer];
     [_delegate switchChangedSliderSwitch:self];
 }
 
@@ -630,6 +634,7 @@
                      }
      ];
     _selectedIndex = 4;
+    [self changeSelectedLayer];
     [_delegate switchChangedSliderSwitch:self];
 }
 
@@ -1033,6 +1038,7 @@
     {
         _selectedIndex = 4;
     }
+    [self changeSelectedLayer];
     [self.delegate switchChangedSliderSwitch:self];
 }
 
@@ -1418,6 +1424,7 @@
     {
         _selectedIndex = 4;
     }
+    [self changeSelectedLayer];
     [_delegate switchChangedSliderSwitch:self];
 }
 
@@ -1486,6 +1493,7 @@
     {
         _selectedIndex = 4;
     }
+    [self changeSelectedLayer];
     [self.delegate switchChangedSliderSwitch:self];
 }
 
@@ -1553,6 +1561,7 @@
     {
         _selectedIndex = 4;
     }
+    [self changeSelectedLayer];
     [self.delegate switchChangedSliderSwitch:self];
     
 }
@@ -1586,6 +1595,7 @@
     {
         _labelFive.text=text;
     }
+    [self changeSelectedLayer];
 }
 
 
