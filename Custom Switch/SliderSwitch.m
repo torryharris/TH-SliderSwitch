@@ -24,6 +24,32 @@
     return self;
 }
 
+-(id)init{
+    self = [super init];
+    if (self) {
+        // Initialization code
+        _selectedIndex = 0;
+        _selectedFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+        _selectedColor = [UIColor whiteColor];
+        _unSelectedFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+        _unSelectedColor = [UIColor blackColor];
+    }
+    return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Initialization code
+        _selectedIndex = 0;
+        _selectedFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+        _selectedColor = [UIColor whiteColor];
+        _unSelectedFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+        _unSelectedColor = [UIColor blackColor];
+    }
+    return self;
+}
+
 -(void)changeSelectedLayer{
     
         if (_selectedIndex == 0) {
@@ -1246,12 +1272,6 @@
              ];
             
         }
-        
-        
-        
-        
-        
-        
     }
     
     
@@ -1566,9 +1586,6 @@
     {
         _labelFive.text=text;
     }
-    
-    
-    
 }
 
 

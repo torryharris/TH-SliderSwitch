@@ -27,17 +27,15 @@
 - (void)setFrameVertical:(CGRect)frame numberOfFields:(NSInteger *)number withCornerRadius:(CGFloat)cornerRadius;
 - (void)setFrameHorizontal:(CGRect)frame numberOfFields:(NSInteger *)number withCornerRadius:(CGFloat)cornerRadius;
 - (void)setText:(NSString *)text forTextIndex:(NSInteger *)number;
-
 - (void)wasDraggedHorizontal:(UIButton *)button withEvent:(UIEvent *)event;
 - (void)wasDraggedVertical:(UIButton *)button withEvent:(UIEvent *)event;
-
 - (void)finishedDraggingHorizontal:(UIButton *)button withEvent:(UIEvent *)event;
 - (void)finishedDraggingVertical:(UIButton *)button withEvent:(UIEvent *)event;
 - (void)setFrameBackgroundColor:(UIColor *)color;
 - (void)setSwitchFrameColor:(UIColor *)color;
 - (void)setTextColor:(UIColor *)color;
--(void)setSwitchBorderWidth:(CGFloat)width;
--(void)changeSelectedLayer;
+- (void)setSwitchBorderWidth:(CGFloat)width;
+- (void)changeSelectedLayer;
 
 @end
 

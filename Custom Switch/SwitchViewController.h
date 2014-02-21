@@ -10,14 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SliderSwitch.h"
 
-
-
 @interface SwitchViewController : UIViewController  <SliderSwitchDelegate>
 @property(nonatomic,retain) SliderSwitch *slideSwitchH,*slideSwitchV;
-
-
-
-
-
 
 @end

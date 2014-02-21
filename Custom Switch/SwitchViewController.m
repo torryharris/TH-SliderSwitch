@@ -29,8 +29,6 @@
  
 }
 
-
-
 - (void)viewDidLoad
 {
        
@@ -59,73 +57,39 @@
     //120/3=40
     //Height of each option is 40 (It should not be a fractional value)
     
-   
     [slideSwitchV setText:@"Red" forTextIndex:1];
     [slideSwitchV setText:@"blue" forTextIndex:2];
     [slideSwitchV setText:@"green" forTextIndex:3];   
     [self.view addSubview:slideSwitchV];
-    [super viewDidLoad];      
-    
-	
+    [super viewDidLoad];
 }
 
 
-//Implement delegate method switchChangedAtIndex to know the selected option and take appropriate action
--(void)slideView:(SliderSwitch *)slideswitch switchChangedAtIndex:(NSUInteger)index
-{
-    NSLog(@"selected option is:::::: %@,%d",slideswitch,index);
+#pragma mark - Slider Switch Delegate Methods
+
+-(void)switchChangedSliderSwitch:(SliderSwitch *)sliderSwitch{
     
-    if (slideswitch==slideSwitchH) {
+    NSLog(@"selected option is:::::: %@,%d",sliderSwitch,sliderSwitch.selectedIndex);
+    
+    if (sliderSwitch==slideSwitchH) {
         NSLog(@"Horizontal slideview");
-        if (index==0) {
-           
+        if (sliderSwitch.selectedIndex==0) {
             self.view.backgroundColor=[UIColor redColor];
-            
+        } else if (sliderSwitch.selectedIndex==1) {
+            self.view.backgroundColor=[UIColor blueColor];
+        } else if (sliderSwitch.selectedIndex==2) {
+            self.view.backgroundColor=[UIColor greenColor];
         }
-        else
-            if (index==1) {
-                
-                self.view.backgroundColor=[UIColor blueColor];
-                
-            }
-            else
-                if (index==2) {
-                    
-                    self.view.backgroundColor=[UIColor greenColor];
-                    
-                }
-
-    }
-    if (slideswitch==slideSwitchV) {
-        NSLog(@"Vertiacal slideview");
-        if (index==0) {
-            
+    } else if (sliderSwitch==slideSwitchV) {
+        if (sliderSwitch.selectedIndex==0) {
             self.view.backgroundColor=[UIColor redColor];
+        } else if (sliderSwitch.selectedIndex==1) {
+            self.view.backgroundColor=[UIColor blueColor];
+        } else if (sliderSwitch.selectedIndex==2) {
+            self.view.backgroundColor=[UIColor greenColor];
         }
-        else
-            if (index==1) {
-                
-                self.view.backgroundColor=[UIColor blueColor];
-                
-            }
-            else
-                if (index==2) {
-                    
-                    self.view.backgroundColor=[UIColor greenColor];
-                    
-                }
-
     }
-    
-    
-    
-    
-       
-
-    
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
