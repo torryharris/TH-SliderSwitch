@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'Custom Switch' target in the 'Custom Switch' project
+// Prefix header for all source files of the 'Slider Switch Demo' target in the 'Slider Switch Demo' project
 //
 
 #import <Availability.h>

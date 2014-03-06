@@ -1,9 +1,9 @@
 //
-//  SlideView.m
-//  Custom Switch
-//
-//  Created by Abhishek's Mac Mini  on 04/03/13.
-//  Copyright (c) 2013 Abhishek's Mac . All rights reserved.
+//  SliderSwitch.m
+//  Slider Switch Demo
+//  Created by Torry Harris's Mac Mini  on 21/01/13.
+//  Copyright (c) 2013 Torry Harris's Mac . All rights reserved.
+//  Modified by Torry Harris's Mac on 6th March, 2014.
 //
 
 #import "SliderSwitch.h"
@@ -1507,27 +1507,24 @@
 //set Text for options label
 - (void)setText:(NSString *)text atLabelIndex:(NSUInteger )number
 {
-    int labelnumber=number;
-    
-    if(labelnumber==1)
-    {
-        _labelOne.text=text;
-    }
-    if(labelnumber==2)
-    {
-        _labelTwo.text=text;
-    }
-    if(labelnumber==3)
-    {
-        _labelThree.text=text;
-    }
-    if(labelnumber==4)
-    {
-        _labelFour.text=text;
-    }
-    if(labelnumber==5)
-    {
-        _labelFive.text=text;
+    switch (number) {
+        case 1:
+            _labelOne.text=text;
+            break;
+        case 2:
+            _labelTwo.text=text;
+            break;
+        case 3:
+            _labelThree.text=text;
+            break;
+        case 4:
+            _labelFour.text=text;
+            break;
+        case 5:
+            _labelFive.text=text;
+            break;
+        default:
+            break;
     }
     [self changeSelectedLayer];
 }

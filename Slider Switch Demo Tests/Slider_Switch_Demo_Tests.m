@@ -2,8 +2,8 @@
 //  Slider_Switch_Demo_Tests.m
 //  Slider Switch Demo Tests
 //
-//  Created by Loganathan on 25/02/14.
-//  Copyright (c) 2014 Abhishek's Mac . All rights reserved.
+//  Created by Torry Harris's Mac on 25/02/14.
+//  Copyright (c) 2014 Torry Harris's Mac . All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

@@ -2,8 +2,8 @@
 //  TestSliderSwitch.m
 //  Slider Switch Demo
 //
-//  Created by Loganathan on 25/02/14.
-//  Copyright (c) 2014 Abhishek's Mac . All rights reserved.
+//  Created by Torry Harris's Mac on 25/02/14.
+//  Copyright (c) 2014 Torry Harris's Mac . All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
@@ -37,6 +37,7 @@
     XCTAssertEqualObjects([UIColor whiteColor], _sliderSwitch.selectedColor, @"Selected Color Not Set");
     XCTAssertEqualObjects([UIFont systemFontOfSize:14], _sliderSwitch.unSelectedFont, @"Unselected Font Not Set");
     XCTAssertEqualObjects([UIColor blackColor], _sliderSwitch.unSelectedColor, @"Unselected Color Not Set");
+    
 }
 
 - (void)testInitWithFrame{
@@ -47,6 +48,12 @@
     XCTAssertEqualObjects([UIColor whiteColor], _sliderSwitch.selectedColor, @"Selected Color Not Set");
     XCTAssertEqualObjects([UIFont systemFontOfSize:14], _sliderSwitch.unSelectedFont, @"Unselected Font Not Set");
     XCTAssertEqualObjects([UIColor blackColor], _sliderSwitch.unSelectedColor, @"Unselected Color Not Set");
+    
+    XCTAssert(_sliderSwitch.labelOne, @"Label One Not Initialized");
+    XCTAssert(_sliderSwitch.labelTwo, @"Label Two Not Initialized");
+    XCTAssert(_sliderSwitch.labelThree, @"Label Three Not Initialized");
+    XCTAssert(_sliderSwitch.labelFour, @"Label Four Not Initialized");
+    XCTAssert(_sliderSwitch.labelFive, @"Label Five Not Initialized");
 }
 
 - (void)testInitWithCoder{
@@ -57,18 +64,27 @@
     XCTAssertEqualObjects([UIColor whiteColor], _sliderSwitch.selectedColor, @"Selected Color Not Set");
     XCTAssertEqualObjects([UIFont systemFontOfSize:14], _sliderSwitch.unSelectedFont, @"Unselected Font Not Set");
     XCTAssertEqualObjects([UIColor blackColor], _sliderSwitch.unSelectedColor, @"Unselected Color Not Set");
+    
 }
 
 -(void) testFrameBackgroundColor{
     _sliderSwitch = [[SliderSwitch alloc] init];
     [_sliderSwitch setFrameBackgroundColor:[UIColor greenColor]];
-    XCTAssertEqualObjects(_sliderSwitch.labelOne.backgroundColor, [UIColor greenColor], @"Frame color didn't set");
+    XCTAssertEqualObjects(_sliderSwitch.labelOne.backgroundColor, [UIColor greenColor], @"Frame color didn't set for label One");
+    XCTAssertEqualObjects(_sliderSwitch.labelTwo.backgroundColor, [UIColor greenColor], @"Frame color didn't set for label Two");
+    XCTAssertEqualObjects(_sliderSwitch.labelThree.backgroundColor, [UIColor greenColor], @"Frame color didn't set for label Three");
+    XCTAssertEqualObjects(_sliderSwitch.labelFour.backgroundColor, [UIColor greenColor], @"Frame color didn't set for label Four");
+    XCTAssertEqualObjects(_sliderSwitch.labelFive.backgroundColor, [UIColor greenColor], @"Frame color didn't set for label Five");
 }
 
 -(void) testSetTextAtIndex{
     _sliderSwitch = [[SliderSwitch alloc] init];
     [_sliderSwitch setText:@"NameOfTheLabel" atLabelIndex:1];
-    XCTAssertTrue([_sliderSwitch.labelOne.text isEqualToString:@"NameOfTheLabel"], @"TEXT NOT EQUALS");
+    XCTAssertTrue([_sliderSwitch.labelOne.text isEqualToString:@"NameOfTheLabel"], @"TEXT MUST BE EQUALS TO NameOfTheLabel");
+    XCTAssertFalse([_sliderSwitch.labelTwo.text isEqualToString:@"NameOfTheLabel"], @"TEXT MUST NOT EQUALS to NameOfTheLabel");
+    [_sliderSwitch setText:@"NameOfTheSecondLabel" atLabelIndex:2];
+    XCTAssertTrue([_sliderSwitch.labelTwo.text isEqualToString:@"NameOfTheSecondLabel"], @"TEXT MUST BE EQUALS TO NameOfTheSecondLabel");
+    XCTAssertFalse([_sliderSwitch.labelOne.text isEqualToString:@"NameOfTheSecondLabel"], @"TEXT MUST NOT EQUALS to NameOfTheSecondLabel");
 }
 
 
