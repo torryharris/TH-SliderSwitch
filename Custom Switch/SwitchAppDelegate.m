@@ -1,9 +1,9 @@
 //
 //  SwitchAppDelegate.m
 //  Slider Switch Demo
-//  Created by Torry Harris's Mac Mini  on 21/01/13.
-//  Copyright (c) 2013 Torry Harris's Mac . All rights reserved.
-//  Modified by Torry Harris's Mac on 6th March, 2014.
+//  Created by Torry Harris on 21/01/13.
+//  Copyright (c) 2014 Torry Harris's Mac . All rights reserved.
+//  Modified by Torry Harris on 6th March, 2014.
 //
 
 #import "SwitchAppDelegate.h"
