@@ -170,7 +170,8 @@
     height=f/n;        
     
     //Prepare frame For two Options
-    if (number==2) {
+    if (number >= 2) {
+        
         _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width,height);
         _labelOne.textAlignment=NSTextAlignmentCenter;
         [_labelOne.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
@@ -182,11 +183,6 @@
         
         _labelTwo.frame = CGRectMake(frame.origin.x, frame.origin.y+height, frame.size.width, height);
         _labelTwo.textAlignment=NSTextAlignmentCenter;
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelTwo.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelTwo.layer.mask = maskLayerRight;
         [self addSubview:_labelTwo];
         
         _labelOne.userInteractionEnabled=YES;
@@ -195,139 +191,75 @@
         [_labelOne addGestureRecognizer:tapGestureLabelone];
         UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
         [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
+        
     }
     
     //Prepare frame For Three Options
-    
-    if (number==3) {
-        
-        _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height);
-        _labelOne.textAlignment=NSTextAlignmentCenter;
-        [_labelOne.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerLeft = [CAShapeLayer layer];
-        UIBezierPath *maskPathLeft=[UIBezierPath bezierPathWithRoundedRect:_labelOne.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerLeft.path = maskPathLeft.CGPath;
-        _labelOne.layer.mask = maskLayerLeft;
-        [self addSubview:_labelOne];
-        
-        _labelTwo.frame = CGRectMake(frame.origin.x, frame.origin.y+height, frame.size.width, height);
-        _labelTwo.textAlignment=NSTextAlignmentCenter;
-        [self addSubview:_labelTwo];
+    if (number >= 3) {
         
         _labelThree.frame = CGRectMake(_labelTwo.frame.origin.x, _labelTwo.frame.origin.y+height, frame.size.width, height);
         _labelThree.textAlignment=NSTextAlignmentCenter;
         [_labelThree.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelThree.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelThree.layer.mask = maskLayerRight;
         [self addSubview:_labelThree];
-        
-        _labelOne.userInteractionEnabled=YES;
-        _labelTwo.userInteractionEnabled=YES;
         _labelThree.userInteractionEnabled=YES;
-        UITapGestureRecognizer *tapGestureLabelone =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelOne addGestureRecognizer:tapGestureLabelone];
-        UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
         UITapGestureRecognizer *tapGestureLabelThree =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelThree addGestureRecognizer:tapGestureLabelThree];       
-                
+        [_labelThree addGestureRecognizer:tapGestureLabelThree];
+        
     }
     
-    //Prepare frame For Four Options  
-    
-    if (number==4) {
+    //Prepare frame For Four Options
+    if (number >= 4) {
         
-        _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height);
-        _labelOne.textAlignment=NSTextAlignmentCenter;
-        [_labelOne.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerLeft = [CAShapeLayer layer];
-        UIBezierPath *maskPathLeft=[UIBezierPath bezierPathWithRoundedRect:_labelOne.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerLeft.path = maskPathLeft.CGPath;
-        _labelOne.layer.mask = maskLayerLeft;
-        [self addSubview:_labelOne];
-        _labelTwo.frame = CGRectMake(frame.origin.x, frame.origin.y+height, frame.size.width, height);
-        _labelTwo.textAlignment=NSTextAlignmentCenter;
-        [self addSubview:_labelTwo];
-        _labelThree.frame = CGRectMake(_labelTwo.frame.origin.x, _labelTwo.frame.origin.y+height, frame.size.width, height);
-        _labelThree.textAlignment=NSTextAlignmentCenter;
-        [_labelThree.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        [self addSubview:_labelThree];
         _labelFour.frame = CGRectMake(_labelThree.frame.origin.x, _labelThree.frame.origin.y+height, frame.size.width, height);
         _labelFour.textAlignment=NSTextAlignmentCenter;
         [_labelFour.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelFour.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelFour.layer.mask = maskLayerRight;
         [self addSubview:_labelFour];
-        _labelOne.userInteractionEnabled=YES;
-        _labelTwo.userInteractionEnabled=YES;
-        _labelThree.userInteractionEnabled=YES;
         _labelFour.userInteractionEnabled=YES;
-        UITapGestureRecognizer *tapGestureLabelone =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelOne addGestureRecognizer:tapGestureLabelone];
-        UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
-        UITapGestureRecognizer *tapGestureLabelThree =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelThree addGestureRecognizer:tapGestureLabelThree];
         UITapGestureRecognizer *tapGestureLabelFour =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
         [_labelFour addGestureRecognizer:tapGestureLabelFour];
+        
     }
     
     //Prepare frame For Five Options
-    if (number==5) {
+    if (number == 5) {
         
-        _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height);
-        _labelOne.textAlignment=NSTextAlignmentCenter;
-        [_labelOne.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerLeft = [CAShapeLayer layer];
-        UIBezierPath *maskPathLeft=[UIBezierPath bezierPathWithRoundedRect:_labelOne.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerLeft.path = maskPathLeft.CGPath;
-        _labelOne.layer.mask = maskLayerLeft;
-        [self addSubview:_labelOne];
-        _labelTwo.frame = CGRectMake(frame.origin.x, frame.origin.y+height, frame.size.width, height);
-        _labelTwo.textAlignment=NSTextAlignmentCenter;
-        [self addSubview:_labelTwo];
-        _labelThree.frame = CGRectMake(_labelTwo.frame.origin.x, _labelTwo.frame.origin.y+height, frame.size.width, height);
-        _labelThree.textAlignment=NSTextAlignmentCenter;
-        [_labelThree.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        [self addSubview:_labelThree];
-        
-        _labelFour.frame = CGRectMake(_labelThree.frame.origin.x, _labelThree.frame.origin.y+height, frame.size.width, height);
-        _labelFour.textAlignment=NSTextAlignmentCenter;
-        [_labelFour.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        [self addSubview:_labelFour];
         _labelFive.frame = CGRectMake(_labelFour.frame.origin.x, _labelFour.frame.origin.y+height, frame.size.width, height);
         _labelFive.textAlignment=NSTextAlignmentCenter;
         [_labelFive.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelFive.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelFive.layer.mask = maskLayerRight;
         [self addSubview:_labelFive];
-        _labelOne.userInteractionEnabled=YES;
-        _labelTwo.userInteractionEnabled=YES;
-        _labelThree.userInteractionEnabled=YES;
-        _labelFour.userInteractionEnabled=YES;
         _labelFive.userInteractionEnabled=YES;
-        UITapGestureRecognizer *tapGestureLabelone =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelOne addGestureRecognizer:tapGestureLabelone];
-        UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
-        UITapGestureRecognizer *tapGestureLabelThree =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelThree addGestureRecognizer:tapGestureLabelThree];
-        UITapGestureRecognizer *tapGestureLabelFour =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelFour addGestureRecognizer:tapGestureLabelFour];
         UITapGestureRecognizer *tapGestureLabelFive =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
         [_labelFive addGestureRecognizer:tapGestureLabelFive];
         
     }
     
-    //Add Switch button to the frame and place it at first option    
+    if (number == 2) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerVertical:_labelTwo cornerRadiusValue:cornerRadius];
+        _labelTwo.layer.mask = maskLayerRight;
+        
+    } else if (number == 3) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerVertical:_labelThree cornerRadiusValue:cornerRadius];
+        _labelThree.layer.mask = maskLayerRight;
+        
+    } else if (number == 4) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerVertical:_labelFour cornerRadiusValue:cornerRadius];
+        _labelFour.layer.mask = maskLayerRight;
+        
+    } else if (number == 5) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerVertical:_labelFive cornerRadiusValue:cornerRadius];
+        _labelFive.layer.mask = maskLayerRight;
+        
+    }
+    
+    //Add Switch button to the frame and place it at first option
     _toggleButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	[_toggleButton setTitle:@"" forState:UIControlStateNormal];
 	// add drag listener
@@ -345,6 +277,15 @@
     
 }
 
+-(CAShapeLayer *)shapeLayerVertical:(UILabel *)label cornerRadiusValue:(CGFloat)cornerRadius {
+    
+    CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+    UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:label.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
+    maskLayerRight.path = maskPathRight.CGPath;
+    
+    return maskLayerRight;
+    
+}
 
 
 //create a horizontal slider switch where frame passed is the frame for switch,numberOfFields is the number of available option
@@ -359,32 +300,7 @@
     width=f/n;    
     
     //Prepare frame For two Options
-    if (number==2) {
-        _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, width, frame.size.height);
-        _labelOne.textAlignment=NSTextAlignmentCenter;
-        [_labelOne.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerLeft = [CAShapeLayer layer];
-        UIBezierPath *maskPathLeft=[UIBezierPath bezierPathWithRoundedRect:_labelOne.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerLeft.path = maskPathLeft.CGPath;
-        _labelOne.layer.mask = maskLayerLeft;
-        [self addSubview:_labelOne];
-        _labelTwo.frame = CGRectMake(frame.origin.x+width, frame.origin.y, width, frame.size.height);
-        _labelTwo.textAlignment=NSTextAlignmentCenter;
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelTwo.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelTwo.layer.mask = maskLayerRight;
-        [self addSubview:_labelTwo];
-        _labelOne.userInteractionEnabled=YES;
-        _labelTwo.userInteractionEnabled=YES;
-        UITapGestureRecognizer *tapGestureLabelone =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelOne addGestureRecognizer:tapGestureLabelone];
-        UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
-    }
-    
-    //Prepare frame For three Options    
-    if (number==3) {
+    if (number >= 2) {
         
         _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, width, frame.size.height);
         _labelOne.textAlignment=NSTextAlignmentCenter;
@@ -397,115 +313,79 @@
         _labelTwo.frame = CGRectMake(frame.origin.x+width, frame.origin.y, width, frame.size.height);
         _labelTwo.textAlignment=NSTextAlignmentCenter;
         [self addSubview:_labelTwo];
-        _labelThree.frame = CGRectMake(_labelTwo.frame.origin.x+width, frame.origin.y, width, frame.size.height);
-        _labelThree.textAlignment=NSTextAlignmentCenter;
-        [_labelThree.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelThree.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelThree.layer.mask = maskLayerRight;
-        [self addSubview:_labelThree];
         _labelOne.userInteractionEnabled=YES;
         _labelTwo.userInteractionEnabled=YES;
-        _labelThree.userInteractionEnabled=YES;
         UITapGestureRecognizer *tapGestureLabelone =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
         [_labelOne addGestureRecognizer:tapGestureLabelone];
         UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
         [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
-        UITapGestureRecognizer *tapGestureLabelThree =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelThree addGestureRecognizer:tapGestureLabelThree];
+        
     }
     
-    //Prepare frame For four Options    
-    if (number==4) {
-        _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, width, frame.size.height);
-        _labelOne.textAlignment=NSTextAlignmentCenter;
-        [_labelOne.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerLeft = [CAShapeLayer layer];
-        UIBezierPath *maskPathLeft=[UIBezierPath bezierPathWithRoundedRect:_labelOne.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerLeft.path = maskPathLeft.CGPath;
-        _labelOne.layer.mask = maskLayerLeft;
-        [self addSubview:_labelOne];
-        _labelTwo.frame = CGRectMake(frame.origin.x+width, frame.origin.y, width, frame.size.height);
-        _labelTwo.textAlignment=NSTextAlignmentCenter;
-        [_labelTwo.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        [self addSubview:_labelTwo];
+    //Prepare frame For three Options
+    if (number >= 3) {
+        
         _labelThree.frame = CGRectMake(_labelTwo.frame.origin.x+width, frame.origin.y, width, frame.size.height);
         _labelThree.textAlignment=NSTextAlignmentCenter;
         [_labelThree.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
         [self addSubview:_labelThree];
+        _labelThree.userInteractionEnabled=YES;
+        UITapGestureRecognizer *tapGestureLabelThree =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
+        [_labelThree addGestureRecognizer:tapGestureLabelThree];
+        
+    }
+    
+    //Prepare frame For four Options
+    if (number >= 4) {
+        
         _labelFour.frame = CGRectMake(_labelThree.frame.origin.x+width, frame.origin.y, width, frame.size.height);
         _labelFour.textAlignment=NSTextAlignmentCenter;
         [_labelFour.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelFour.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelFour.layer.mask = maskLayerRight;
         [self addSubview:_labelFour];
-        _labelOne.userInteractionEnabled=YES;
-        _labelTwo.userInteractionEnabled=YES;
-        _labelThree.userInteractionEnabled=YES;
         _labelFour.userInteractionEnabled=YES;
-        UITapGestureRecognizer *tapGestureLabelone =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelOne addGestureRecognizer:tapGestureLabelone];
-        UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
-        UITapGestureRecognizer *tapGestureLabelThree =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelThree addGestureRecognizer:tapGestureLabelThree];
         UITapGestureRecognizer *tapGestureLabelFour =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
         [_labelFour addGestureRecognizer:tapGestureLabelFour];
         
     }
     
     //Prepare frame For five Options
-    if (number==5) {
-        _labelOne.frame = CGRectMake(frame.origin.x, frame.origin.y, width, frame.size.height);
-        _labelOne.textAlignment=NSTextAlignmentCenter;
-        [_labelOne.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerLeft = [CAShapeLayer layer];
-        UIBezierPath *maskPathLeft=[UIBezierPath bezierPathWithRoundedRect:_labelOne.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerBottomLeft) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerLeft.path = maskPathLeft.CGPath;
-        _labelOne.layer.mask = maskLayerLeft;
-        [self addSubview:_labelOne];
-        _labelTwo.frame = CGRectMake(frame.origin.x+width, frame.origin.y, width, frame.size.height);
-        _labelTwo.textAlignment=NSTextAlignmentCenter;
-        [_labelTwo.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        [self addSubview:_labelTwo];
-        _labelThree.frame = CGRectMake(_labelTwo.frame.origin.x+width, frame.origin.y, width, frame.size.height);
-        _labelThree.textAlignment=NSTextAlignmentCenter;
-        [_labelThree.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        [self addSubview:_labelThree];
-        _labelFour.frame = CGRectMake(_labelThree.frame.origin.x+width, frame.origin.y, width, frame.size.height);
-        _labelFour.textAlignment=NSTextAlignmentCenter;
-        [_labelFour.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        [self addSubview:_labelFour];
+    if (number == 5) {
+        
         _labelFive.frame = CGRectMake(_labelFour.frame.origin.x+width, frame.origin.y, width, frame.size.height);
         _labelFive.textAlignment=NSTextAlignmentCenter;
         [_labelFive.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
-        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
-        UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:_labelFive.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
-        maskLayerRight.path = maskPathRight.CGPath;
-        _labelFive.layer.mask = maskLayerRight;
         [self addSubview:_labelFive];
-        _labelOne.userInteractionEnabled=YES;
-        _labelTwo.userInteractionEnabled=YES;
-        _labelThree.userInteractionEnabled=YES;
-        _labelFour.userInteractionEnabled=YES;
         _labelFive.userInteractionEnabled=YES;
-        UITapGestureRecognizer *tapGestureLabelone =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelOne addGestureRecognizer:tapGestureLabelone];
-        UITapGestureRecognizer *tapGestureLabelTwo =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelTwo addGestureRecognizer:tapGestureLabelTwo];
-        UITapGestureRecognizer *tapGestureLabelThree =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelThree addGestureRecognizer:tapGestureLabelThree];
-        UITapGestureRecognizer *tapGestureLabelFour =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
-        [_labelFour addGestureRecognizer:tapGestureLabelFour];
         UITapGestureRecognizer *tapGestureLabelFive =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapGesture:)];
         [_labelFive addGestureRecognizer:tapGestureLabelFive];
         
-        
     }
     
+    if (number == 2) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerHorizontal:_labelTwo cornerRadiusValue:cornerRadius];
+        _labelTwo.layer.mask = maskLayerRight;
+        
+    } else if (number == 3) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerHorizontal:_labelThree cornerRadiusValue:cornerRadius];
+        _labelThree.layer.mask = maskLayerRight;
+        
+    } else if (number == 4) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerHorizontal:_labelFour cornerRadiusValue:cornerRadius];
+        _labelFour.layer.mask = maskLayerRight;
+        
+    } else if (number == 5) {
+        
+        CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+        maskLayerRight = [self shapeLayerHorizontal:_labelFive cornerRadiusValue:cornerRadius];
+        _labelFive.layer.mask = maskLayerRight;
+        
+    }
     
     //Add Switch button to the frame and place it at first option
     _toggleButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -525,6 +405,18 @@
     
     
 }
+
+
+-(CAShapeLayer *)shapeLayerHorizontal:(UILabel *)label cornerRadiusValue:(CGFloat)cornerRadius {
+    
+    CAShapeLayer *maskLayerRight = [CAShapeLayer layer];
+    UIBezierPath *maskPathRight=[UIBezierPath bezierPathWithRoundedRect:label.bounds byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight) cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
+    maskLayerRight.path = maskPathRight.CGPath;
+    
+    return maskLayerRight;
+    
+}
+
 
 //To set the border width of switch button
 -(void)setSwitchBorderWidth:(CGFloat)width
